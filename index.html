@@ -452,7 +452,29 @@
       nav { padding: 1rem 1.5rem; }
       .nav-links { display: none; }
       section { padding: 4rem 1.5rem; }
-      .hero { padding: 7rem 1.5rem 4rem; }
+
+      /* Hero mobile: foto posicionada no topo-centro, overlay uniforme */
+      .hero {
+        padding: 6rem 1.5rem 4rem;
+        min-height: 100svh;
+        background-position: 60% top;
+        background-size: cover;
+        align-items: flex-end;
+      }
+      .hero::before {
+        background: linear-gradient(
+          to top,
+          rgba(5,16,30,0.97) 0%,
+          rgba(5,16,30,0.80) 45%,
+          rgba(5,16,30,0.30) 100%
+        );
+      }
+      .hero-inner {
+        max-width: 100%;
+        padding-bottom: 1rem;
+      }
+      h1 { font-size: clamp(2.6rem, 10vw, 3.6rem); }
+
       .sobre-grid, .docencia-grid, .contato-grid { grid-template-columns: 1fr; gap: 3rem; }
       .areas-grid { grid-template-columns: repeat(2, 1fr); }
       .problemas-grid { grid-template-columns: 1fr; }
